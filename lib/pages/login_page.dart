@@ -7,6 +7,8 @@ class LoginPage extends StatelessWidget {
   final TextEditingController passwordController = TextEditingController();
   LoginPage({super.key});
 
+  void login() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,8 +48,23 @@ class LoginPage extends StatelessWidget {
             ),
             const SizedBox(height: 25),
 
-            const Buttons(
-              text: "Login", 
+            Buttons(
+              text: "Login",
+              onTap: login,
+            ),
+            const SizedBox(height: 25),
+
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Not a member?"),
+                Text(
+                  "Register now",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
